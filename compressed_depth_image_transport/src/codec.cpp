@@ -249,7 +249,7 @@ sensor_msgs::CompressedImage::Ptr encodeCompressedDepthImage(
         {
           float cRatio = (float)(cv_ptr->image.rows * cv_ptr->image.cols * cv_ptr->image.elemSize())
               / (float)compressedImage.size();
-          ROS_DEBUG("Compressed Depth Image Transport - Compression: 1:%.2f (%lu bytes)", cRatio, compressedImage.size());
+          ROS_DEBUG("Compressed Depth Image Transport - Compression: 1:%.2f (%i bytes)", cRatio, compressedImage.size());
         }
         else
         {
@@ -303,7 +303,7 @@ sensor_msgs::CompressedImage::Ptr encodeCompressedDepthImage(
       {
         float cRatio = (float)(cv_ptr->image.rows * cv_ptr->image.cols * cv_ptr->image.elemSize())
             / (float)compressedImage.size();
-        ROS_DEBUG("Compressed Depth Image Transport - Compression: 1:%.2f (%lu bytes)", cRatio, compressedImage.size());
+        ROS_DEBUG("Compressed Depth Image Transport - Compression: 1:%.2f (%i bytes)", cRatio, compressedImage.size());
       }
       else
       {

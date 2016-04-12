@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(theora_image_transport)
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3.1 REQUIRED)
 find_package(catkin REQUIRED COMPONENTS cv_bridge dynamic_reconfigure image_transport message_generation rosbag pluginlib std_msgs)
 
 add_message_files(DIRECTORY msg FILES Packet.msg)

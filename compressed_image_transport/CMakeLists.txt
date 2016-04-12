@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(compressed_image_transport)
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3.1 REQUIRED)
 find_package(catkin REQUIRED COMPONENTS cv_bridge dynamic_reconfigure image_transport)
 
 # generate the dynamic_reconfigure config file
@@ -11,7 +11,6 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS cv_bridge dynamic_reconfigure image_transport
-  DEPENDS OpenCV
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS})

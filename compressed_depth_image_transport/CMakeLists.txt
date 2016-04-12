@@ -5,7 +5,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
 endif()
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3.1 REQUIRED)
 find_package(catkin REQUIRED cv_bridge dynamic_reconfigure image_transport)
 
 # generate the dynamic_reconfigure config file
@@ -15,7 +15,6 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS cv_bridge dynamic_reconfigure image_transport
-  DEPENDS OpenCV
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS})
