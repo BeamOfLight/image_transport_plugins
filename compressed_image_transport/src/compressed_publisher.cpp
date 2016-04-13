@@ -127,7 +127,7 @@ void CompressedPublisher::publish(const sensor_msgs::Image& message, const Publi
 
             float cRatio = (float)(cv_ptr->image.rows * cv_ptr->image.cols * cv_ptr->image.elemSize())
                 / (float)compressed.data.size();
-            ROS_DEBUG("Compressed Image Transport - Codec: jpg, Compression Ratio: 1:%.2f (%lu bytes)", cRatio, compressed.data.size());
+            ROS_DEBUG("Compressed Image Transport - Codec: jpg, Compression Ratio: 1:%.2f (%i bytes)", cRatio, static_cast < int > (compressed.data.size()));
           }
           else
           {
@@ -185,7 +185,7 @@ void CompressedPublisher::publish(const sensor_msgs::Image& message, const Publi
 
             float cRatio = (float)(cv_ptr->image.rows * cv_ptr->image.cols * cv_ptr->image.elemSize())
                 / (float)compressed.data.size();
-            ROS_DEBUG("Compressed Image Transport - Codec: png, Compression Ratio: 1:%.2f (%lu bytes)", cRatio, compressed.data.size());
+            ROS_DEBUG("Compressed Image Transport - Codec: png, Compression Ratio: 1:%.2f (%i bytes)", cRatio, static_cast < int > (compressed.data.size()));
           }
           else
           {
